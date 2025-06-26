@@ -1,0 +1,78 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  color: #333;
+  line-height: 1.6;
+  padding: 2rem;
+}
+
+/* Encabezado */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+/* Secciones de gráficos */
+.chart-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.chart-section:hover {
+  transform: translateY(-5px);
+}
+
+.chart-section h2 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-bottom: 1rem;
+}
+
+/* Canvas */
+canvas {
+  display: block;
+  margin: 0 auto;
+  width: 100% !important;
+  max-width: 800px;
+  height: 300px !important; /* ← Fijamos altura */
+}
+
+/* Footer */
+.dashboard-footer {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .chart-section h2 {
+    font-size: 1.5rem;
+  }
+}
+ 

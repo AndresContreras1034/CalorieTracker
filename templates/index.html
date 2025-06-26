@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard interactivo para el seguimiento de peso y calorías." />
+  <meta name="author" content="ANDRÉS FELIPE CONTRERAS MENDEZ" />
+  <title>📊 Calorie Tracker</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Inyección de datos desde Flask -->
+  <script>
+    const pesos = {{ pesos|tojson }};
+    const alimentos = {{ alimentos|tojson }};
+  </script>
+
+  <!-- Script de gráficos -->
+  <script src="/static/js/chart-handler.js" defer></script>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+      margin: 0;
+      padding: 0;
+    }
+
+    .dashboard-header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .dashboard-header h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    .chart-section {
+      background-color: #ffffff;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+    }
+
+    .chart-section h2 {
+      font-size: 1.8rem;
+      color: #34495e;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .dashboard-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .action-links {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .action-links a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+
+    .action-links a:first-child {
+      background-color: #3498db;
+    }
+
+    .action-links a:first-child:hover {
+      background-color: #2980b9;
+    }
+
+    .action-links a:last-child {
+      background-color: #e67e22;
+    }
+
+    .action-links a:last-child:hover {
+      background-color: #d35400;
+    }
+
+    .wave {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Onda superior -->
+  <img class="wave" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=header" alt="onda superior" />
+
+  <main class="dashboard">
+    <header class="dashboard-header">
+      <h1>📊 Dashboard - Calorie Tracker</h1>
+    </header>
+
+    <section class="chart-section" aria-labelledby="peso-diario">
+      <h2 id="peso-diario">📈 Peso Diario</h2>
+      <canvas id="pesoChart" aria-label="Gráfico de peso diario" role="img"></canvas>
+    </section>
+
+    <section class="chart-section" aria-labelledby="calorias-dia">
+      <h2 id="calorias-dia">🔥 Calorías por Día</h2>
+      <canvas id="caloriasChart" aria-label="Gráfico de calorías por día" role="img"></canvas>
+    </section>
+  </main>
+
+  <div class="action-links">
+    <a href="/add_weight">➕ Registrar Peso</a>
+    <a href="/add_food">🍽️ Registrar Alimento</a>
+  </div>
+
+  <footer class="dashboard-footer">
+    <p>&copy; 2025 ANDRÉS FELIPE CONTRERAS MENDEZ. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Onda inferior -->
+  <img class="wave" src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer" alt="onda inferior" />
+
+</body>
+</html>

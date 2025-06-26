@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrar Alimento</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 1rem;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .form-container h2 {
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+
+    label {
+      font-weight: 600;
+      color: #34495e;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    input[type="date"],
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #e67e22;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.9rem;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d35400;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 1.8rem;
+      color: #e67e22;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>🍽️ Registrar Alimento</h2>
+    <form method="POST">
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required />
+
+      <label for="nombre">Nombre del alimento:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Ej. Manzana" required />
+
+      <label for="calorias">Calorías:</label>
+      <input type="number" id="calorias" name="calorias" placeholder="Ej. 95" required />
+
+      <button type="submit">💾 Guardar</button>
+    </form>
+    <a class="back-link" href="/">← Volver al inicio</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dashboard para el seguimiento de calorías y peso corporal." />
+  <meta name="author" content="ANDRÉS FELIPE CONTRERAS MENDEZ" />
+  <title>{% block title %}Calorie Tracker{% endblock %}</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="/static/css/style.css" />
+  <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon" />
+
+  <!-- Chart.js -->
+  https://cdn.jsdelivr.net/npm/chart.js
+
+  <!-- Scripts adicionales -->
+  {% block head_scripts %}{% endblock %}
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="site-title">📊 Calorie Tracker</h1>
+  </header>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="main-footer">
+    <p>&copy; 2025 ANDRÉS FELIPE CONTRERAS MENDEZ. Todos los derechos reservados.</p>
+  </footer>
+
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>
